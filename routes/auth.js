@@ -65,6 +65,15 @@ router.get("/userPage", ensureLogin.ensureLoggedIn(), (req, res) => {
 
 //********END OF REDIRECT TO USER PAGE CODE***********/
 
+
+
+//***********create the new-pet-page********** */
+router.get("/new-pet", ensureLogin.ensureLoggedIn(), (req, res) => {
+  res.render("auth/new-pet", { user: req.user });
+});
+
+//************end of the new-pet-page*********** */
+
 router.get("/logout", (req, res) => {
   req.logout();
   res.redirect("/");
