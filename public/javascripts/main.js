@@ -7,6 +7,9 @@ function startMap() {
         zoom: 12,
         center: kottiBRLN
 
+        //INFORMATION BOX
+        const content STring    
+
         //MARKERS
     });
     const myMarker = new google.maps.Marker({
@@ -20,8 +23,8 @@ function startMap() {
     });
     const myMarker2 = new google.maps.Marker({
         position: {
-            lat: 45.3977381,
-            lng: 22.190471916
+            lat: 45.3977381, //req.body.longitude --> array: dann wird die Position zu index 0 und 1as  qQ  Q
+            lng: 22.190471916 //req.body.latitude
         },
         map: map,
         title: "I'm not here"

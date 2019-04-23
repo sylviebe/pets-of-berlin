@@ -12,4 +12,19 @@ a {
     height: 400px;
 }
 
+.nav-bar {
+    position: absolute;
+    width: 375px;
+    height: 62px;
+    left: 0px;
+    top: 0px;
+}
+
+.button {
+    position: absolute;
+    width: 345px;
+    height: 60px;
+    left: 15px;
+    top: 593px;
+}
 /*# sourceMappingURL=style.css.map */

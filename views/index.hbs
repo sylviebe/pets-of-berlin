@@ -1,8 +1,49 @@
 <h1>{{title}}</h1>
 <p>Welcome to {{title}}</p>
+<div class="button">
+    <button>LOG IN</button>
+</div>
 <div id="map"></div>
+
+
 <!--  Google Maps Key  -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKy7ahg5bHKM2GCY6qnsX4ve-Rgq77VVc
 "></script>
 <!--  Connect main.js  -->
 <script type="text/javascript" src="/javascripts/main.js"></script>
+
+
+
+<!-- 
+<script>
+
+    // Just copied and pasted needs corrections
+
+    var markerHeight = 20, markerRadius = 3, linearOffset = 10;
+    var popupOffsets = {
+        'top': [0, 0],
+        'top-left': [0, 0],
+        'top-right': [0, 0],
+        'bottom': [0, -markerHeight],
+        'bottom-left': [linearOffset, (markerHeight - markerRadius + linearOffset) * -1],
+        'bottom-right': [-linearOffset, (markerHeight - markerRadius + linearOffset) * -1],
+        'left': [markerRadius, (markerHeight - markerRadius) * -1],
+        'right': [-markerRadius, (markerHeight - markerRadius) * -1]
+    };
+
+    axios.get('/api/petshome') // from Database + randomize Radius (needs hint for Users)
+        .then((response) => {
+            let places = response.data
+            places.forEach((petshome) => {
+                let coordinate = petshome.location.coordinates
+                var marker = new mapboxgl.Marker()
+                    .setLngLat(coordinate)
+                    .addTo(map);
+                var popup = new mapboxgl.Popup({ offset: popupOffsets, className: 'my-class' }) //
+                
+                !!Muss zu google map geändert werden!!
+                    
+                    .setLngLat(coordinate)
+                    .setHTML(`<h4>${place.name}</h4>`) 
+                    .addTo(map);
+</script> -->
