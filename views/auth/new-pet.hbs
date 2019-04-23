@@ -5,24 +5,44 @@
 
 <h2>Use the below form to create your pets profile</h2>
 
+<br><br>
+
+
 <form action="/auth/new-pet" method="POST" id="form-container">
-  <label for="petname">Petname</label>
+  <label for="petname">Petname: </label>
   <input id="petname" type="text" name="petname" placeholder="Fluffykins">
 
   <br><br>
 
-  <label for="petColour">Pet Colour</label>
-  <input id="petColour" type="text" name="petColour" placeholder="A lucious crimson-marroon sau">
+  <label for="petColour">Pet Colour: </label>
+  <input id="petColour" type="text" name="petColour" placeholder="A lucious crimson sau">
 
   <br><br>
 
-  <label for="animalFamily">AnimalFamily</label>
-  <input id="animalFamily" type="text" name="animalFamily" placeholder="Guinea Pig">
+  <label for="petAge">Age: </label>
+  <input id="petAge" type="number" name="petAge" placeholder="Pet Age">
+
 
   <br><br>
 
-  <label for="petPhoto">Photo</label>
-  <input id="petPhoto" type="text" name="petPhoto" placeholder="Pet Photo">
+  <label for="animalFamily">Animal Family: </label>
+  <select>
+    <option value="pleaseSelect">Please Choose</option>
+    <option value="guineapig">Guinea Pig</option>
+    <option value="dog">Dog</option>
+    <option value="cat">Cat</option>
+    <option value="spider">Spider</option>
+  </select>
+
+  <br><br>
+
+  <label for="petPhoto">Photo: </label>
+  <form action="/action_page.php">
+    <input type="file" name="pic" accept="image/*">
+    <input type="submit">
+  </form>
+
+
   <br>
 
 
