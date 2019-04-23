@@ -72,16 +72,14 @@ app.use(
 app.use(flash());
 require('./passport')(app);
 
-const index = require('./routes/index');
-app.use('/', index);
+const apiRoutes = require('./routes/api');
+app.use('/api', apiRoutes);
 
 const authRoutes = require('./routes/auth');
 app.use('/auth', authRoutes);
 
 // Link to the Pet's location data
 const index = require('./routes/index');
-app.use('/pets', index);
-
-module.exports = app;
+app.use('/', index);
 
 module.exports = app;

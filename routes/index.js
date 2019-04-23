@@ -1,9 +1,12 @@
 const express = require('express');
 const router = express.Router();
+const Pet = require('../models/Pet');
+const User = require('../models/User');
 /*const Place = require('../models/place.js')*/
 
 /* GET home page */
 router.get('/', (req, res, next) => {
+    console.log('hello from get route');
     res.render('index');
 });
 

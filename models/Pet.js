@@ -3,14 +3,23 @@ const Schema = mongoose.Schema;
 
 const PetSchema = new Schema(
     {
-        name: String,
+        name: {
+            type: String,
+            required: true
+        },
         color: String,
         age: Number,
+        animalFamily: {
+            type: String,
+            enum: ['Dog', 'Cat', 'Guinea Pig'],
+            required: true
+        },
         owner: { type: Schema.Types.ObjectId, ref: 'User' },
         avatarUrl: { type: String, default: 'images/default-avatar.png' }, // default image if none uploaded
         //?  --- location: { type: { type: String }, coordinates: [Number] }
         //});
         location: {
+            /*  required: true, */
             lat: Number,
             lng: Number,
             address: String,
