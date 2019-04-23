@@ -6,12 +6,15 @@ function startMap() {
     const map = new google.maps.Map(document.getElementById('map'), {
         zoom: 12,
         center: kottiBRLN
-
-        //INFORMATION BOX
-        const content STring    
-
-        //MARKERS
     });
+    //INFORMATION BOX
+    // const contentString = <div id="content" />;
+    //  var infowindow = new google.maps.InfoWindow({
+    //content: contentString
+};
+
+    //MARKERS
+
     const myMarker = new google.maps.Marker({
         position: {
             lat: 52.497992,

@@ -13,7 +13,7 @@ router.get("/login", (req, res, next) => {
 });
 
 router.post("/login", passport.authenticate("local", {
-  successRedirect: "/",
+  successRedirect: "/auth/userPage",
   failureRedirect: "/auth/login",
   failureFlash: true,
   passReqToCallback: true
@@ -46,14 +46,24 @@ router.post("/signup", (req, res, next) => {
     });
 
     newUser.save()
-    .then(() => {
-      res.redirect("/");
-    })
-    .catch(err => {
-      res.render("auth/signup", { message: "Something went wrong" });
-    })
+      .then(() => {
+        res.redirect("/");
+      })
+      .catch(err => {
+        res.render("auth/signup", { message: "Something went wrong" });
+      })
   });
 });
+
+
+//********REDIRECT TO USER PAGE CODE***********/
+const ensureLogin = require("connect-ensure-login");
+
+router.get("/userPage", ensureLogin.ensureLoggedIn(), (req, res) => {
+  res.render("auth/userPage", { user: req.user });
+});
+
+//********END OF REDIRECT TO USER PAGE CODE***********/
 
 router.get("/logout", (req, res) => {
   req.logout();
