@@ -11,7 +11,6 @@ function startMap() {
     // const contentString = <div id="content" />;
     //  var infowindow = new google.maps.InfoWindow({
     //content: contentString
-};
 
     //MARKERS
 
@@ -32,6 +31,7 @@ function startMap() {
         map: map,
         title: "I'm not here"
     });
-}
+};
+
 
 startMap();
