@@ -1,12 +1,28 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+    width: 375px;
+    height: 667px;
+    font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+}
 
 #map {
-  width: 100%;
-  height: 400px; }
+    width: 100%;
+    height: 100%;
+}
 
 a {
-  color: #00B7FF; }
+    color: #00b7ff;
+}
 
 /*# sourceMappingURL=style.css.map */
+/* 0 - 500 */
+@media (max-width: 500px) {
+    div {
+        background-color: blue;
+    }
+}
+/* 500 - 999 */
+@media (min-width: 500px) and (max-width: 999px) {
+    div {
+        background-color: green;
+    }
+}

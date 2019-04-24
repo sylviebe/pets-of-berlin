@@ -77,7 +77,7 @@ let pets = [
         countryCode: 'DE'
     }
 ];
-
+// Deleting all the users
 User.deleteMany()
     .then(() => {
         return User.create(users);

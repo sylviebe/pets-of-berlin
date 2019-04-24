@@ -15,6 +15,18 @@ function startMap() {
     // const contentString = <div id="content" />;
     //  var infowindow = new google.maps.InfoWindow({
     //content: contentString
+    /*var infowindow = new google.maps.InfoWindow({
+        content: contentString
+      });
+
+      var marker = new google.maps.Marker({
+        position: uluru,
+        map: map,
+        title: 'Uluru (Ayers Rock)'
+      });
+      marker.addListener('click', function() {
+        infowindow.open(map, marker);
+      });*/
 
     //MARKERS
 
