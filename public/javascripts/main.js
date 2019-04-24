@@ -29,7 +29,7 @@ function startMap() {
         },
         map: map,
         title: "I'm here",
-        icon: './images/guinea-icon.jpg'
+        icon: './images/guinea-icon.png'
     });
 }
 
@@ -52,12 +52,12 @@ const getPets = () => {
 const placePets = pets => {
     console.log('hello from placing pets', pets);
     console.log(pets);
-    pets.forEach(function(el) {
+    pets.forEach(function (el) {
         const pin = new google.maps.Marker({
             position: el.location,
             map: map,
             title: el.name,
-            icon: './images/guinea-icon.jpg'
+            icon: './images/guinea-icon.png'
         });
         markers.push(pin);
     });
