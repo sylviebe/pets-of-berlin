@@ -63,7 +63,12 @@ router.post("/signup", (req, res, next) => {
 const ensureLogin = require("connect-ensure-login");
 
 router.get("/userPage", ensureLogin.ensureLoggedIn(), (req, res) => {
-  res.render("auth/userPage", { user: req.user });
+  let user = req.user._id
+  console.log(user, "userid")
+  User.findOne({ _id: user })
+    .then(userInfo => {
+      res.render("auth/userPage", { userInfo });
+    })
 });
 
 //********END OF REDIRECT TO USER PAGE CODE***********/
@@ -76,9 +81,17 @@ router.get("/new-pet", ensureLogin.ensureLoggedIn(), (req, res) => {
 });
 
 router.post("/new-pet", (req, res) => {
-  console.log("hello from the route")
+  let owner = req.user._id
   console.log(req.body, "REQ BODY")
-  Pet.create(req.body)
+  const { name, colour, age, animalFamily, pic } = req.body
+  const addressSplit = req.body.address.split(",")
+  const location = {
+    lat: req.body.lat,
+    lng: req.body.lng,
+    address: addressSplit[0],
+    city: addressSplit[1]
+  }
+  Pet.create({ name, colour, age, animalFamily, location, owner })
     .then(() => {
       res.redirect("/")
     })
