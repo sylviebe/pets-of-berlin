@@ -2,6 +2,7 @@ const express = require("express");
 const passport = require('passport');
 const router = express.Router();
 const User = require("../models/User");
+const Pet = require("../models/Pet");
 
 // Bcrypt to encrypt passwords
 const bcrypt = require("bcrypt");
@@ -72,6 +73,18 @@ router.get("/new-pet", ensureLogin.ensureLoggedIn(), (req, res) => {
   res.render("auth/new-pet", { user: req.user });
 });
 
+router.post("/new-pet", (req, res) => {
+  console.log("hello from the route")
+  console.log(req.body, "REQ BODY")
+  Pet.create(req.body)
+    .then(() => {
+      res.redirect("/")
+    })
+    .catch(err => {
+      console.log("you have an error", err)
+      res.redirect("/auth/new-pet")
+    })
+})
 //************end of the new-pet-page*********** */
 
 router.get("/logout", (req, res) => {

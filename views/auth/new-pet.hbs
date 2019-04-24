@@ -9,8 +9,8 @@
 
 
 <form action="/auth/new-pet" method="POST" id="form-container">
-  <label for="petname">Petname: </label>
-  <input id="petname" type="text" name="petname" placeholder="Fluffykins">
+  <label for="name">Petname: </label>
+  <input id="name" type="text" name="name" placeholder="Fluffykins">
 
   <br><br>
 
@@ -26,30 +26,30 @@
   <br><br>
 
   <label for="animalFamily">Animal Family: </label>
-  <select>
-    <option value="pleaseSelect">Please Choose</option>
-    <option value="guineapig">Guinea Pig</option>
-    <option value="dog">Dog</option>
-    <option value="cat">Cat</option>
-    <option value="spider">Spider</option>
+  <select name="animalFamily">
+    <option name="animalFamily" value="pleaseSelect">Please Choose</option>
+    <option name="animalFamily" value="guinea pig">Guinea Pig</option>
+    <option name="animalFamily" value="dog">Dog</option>
+    <option name="animalFamily" value="cat">Cat</option>
+    <option name="animalFamily" value="spider">Spider</option>
   </select>
 
+  <button type="submit" name="button">Create Pet</button>
   <br><br>
-
-  <label for="petPhoto">Photo: </label>
-  <form action="/action_page.php">
-    <input type="file" name="pic" accept="image/*">
-    <input type="submit">
-  </form>
-
-
-  <br>
+</form>
+<label for="petPhoto">Photo: </label>
+<form action="/action_page.php">
+  <input type="file" name="pic" accept="image/*">
+  <input type="submit">
+</form>
 
 
-  <br><br>
+<br>
 
-  <button>Create Pet</button>
 
-  <input type="button" onclick="location.href='/auth/new-pet';" value="Cancel Pet" />
+<br><br>
 
-  <input type="button" onclick="location.href='/';" value="Go to Pet Map" />
+
+<input type="button" onclick="location.href='/auth/new-pet';" value="Cancel Pet" />
+
+<input type="button" onclick="location.href='/';" value="Go to Pet Map" />
