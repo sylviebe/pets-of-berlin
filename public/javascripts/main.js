@@ -1,5 +1,13 @@
 var map;
 const markers = [];
+// const geocoder = new google.maps.Geocoder()
+
+// geocoder.geocode({
+//     address: 'WeWork, Eichhornstraße, Berlin',
+// }).then(data => {
+//     console.log('hereeeeeeeeeeeeeeeeeeeeeeeeeee')
+//     console.log(data)
+// })
 
 function startMap() {
     const kottiBRLN = {
@@ -24,8 +32,8 @@ function startMap() {
 
     const myMarker = new google.maps.Marker({
         position: {
-            lat: 30,
-            lng: 40
+            lat: 52.497992,
+            lng: 13.420135
         },
         map: map,
         title: "I'm here",
