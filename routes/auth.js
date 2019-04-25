@@ -67,7 +67,12 @@ router.get("/userPage", ensureLogin.ensureLoggedIn(), (req, res) => {
   console.log(user, "userid")
   User.findOne({ _id: user })
     .then(userInfo => {
-      res.render("auth/userPage", { userInfo });
+      Pet.find({ owner: user })
+        .then(pets => {
+          console.log(pets)
+          res.render("auth/userPage", { userInfo, pets });
+        })
+
     })
 });
 
@@ -93,7 +98,7 @@ router.post("/new-pet", (req, res) => {
   }
   Pet.create({ name, colour, age, animalFamily, location, owner })
     .then(() => {
-      res.redirect("/")
+      res.redirect("/auth/userPage")
     })
     .catch(err => {
       console.log("you have an error", err)
