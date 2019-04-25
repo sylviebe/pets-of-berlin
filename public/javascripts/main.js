@@ -1,6 +1,16 @@
 var map;
 const markers = [];
 
+
+// const geocoder = new google.maps.Geocoder()
+
+// geocoder.geocode({
+//     address: 'WeWork, Eichhornstraße, Berlin',
+// }).then(data => {
+//     console.log('hereeeeeeeeeeeeeeeeeeeeeeeeeee')
+//     console.log(data)
+// })
+
 function startMap() {
     const kottiBRLN = {
         lat: 52.497992,
@@ -36,12 +46,12 @@ function startMap() {
 
     const myMarker = new google.maps.Marker({
         position: {
-            lat: 30,
-            lng: 40
+            lat: 52.497992,
+            lng: 13.420135
         },
         map: map,
         title: "I'm here",
-        icon: './images/guinea-icon.jpg'
+        icon: './images/guinea-icon.png'
     });
 }
 
@@ -64,15 +74,17 @@ const getPets = () => {
 const placePets = pets => {
     console.log('hello from placing pets', pets);
     console.log(pets);
-    pets.forEach(function(el) {
+    pets.forEach(function (el) {
         const pin = new google.maps.Marker({
             position: el.location,
             map: map,
             title: el.name,
-            icon: './images/guinea-icon.jpg'
+            icon: './images/guinea-icon.png'
         });
         markers.push(pin);
     });
 };
 
 getPets();
+
+

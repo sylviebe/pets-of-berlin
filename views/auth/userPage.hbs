@@ -1,12 +1,49 @@
 <h2>Pets Of Berlin</h2>
-<h2>User Page</h2>
-<h2>:-)</h2>
+<h2>-User Page-</h2>
 
+<h3>Your Details: </h3>
+<p>Hiiii {{userInfo.username}}, that's your name right? Haha you fuck!</p>
 
-<h2>Hiiii {{user}}</h2>
 
 
 
 
 <br><br>
-<button>Create Pet</button>
+
+
+
+
+<input type="button" onclick="location.href='/';" value="Go to Pet Map" />
+
+<input type="button" onclick="location.href='/auth/new-pet';" value="Create Pet" />
+
+<br><br>
+
+<h2>{{userInfo.username}}'s Furry Friends: </h2>
+
+<br><br>
+
+
+{{#each pets}}
+<a href="/new-pet/{{this.avatarUrl}}">Animal Family: {{this.avatarUrl}}</a>
+<br>
+<a href="/new-pet/{{this.id}}">Name: {{this.name}}</a>
+<br>
+<a href="/new-pet/{{this.colour}}">Colour: {{this.colour}}</a>
+<br>
+<a href="/new-pet/{{this.age}}">Age: {{this.age}}</a>
+<br>
+<a href="/new-pet/{{this.animalFamily}}">Animal Family: {{this.animalFamily}}</a>
+<br>
+
+<form action="/new-pet/{{this.id}}/edit" method="get">
+  <div><button type="submit" class="">Edit this pet</button></div>
+</form>
+
+<form action="/new-pet/{{this.id}}/delete" method="post">
+  <div><button type="submit" class="">Dead? Delete it here</button></div>
+</form>
+
+<br>
+<br>
+{{/each}}

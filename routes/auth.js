@@ -2,6 +2,7 @@ const express = require("express");
 const passport = require('passport');
 const router = express.Router();
 const User = require("../models/User");
+const Pet = require("../models/Pet");
 
 // Bcrypt to encrypt passwords
 const bcrypt = require("bcrypt");
@@ -25,6 +26,7 @@ router.get("/signup", (req, res, next) => {
 
 router.post("/signup", (req, res, next) => {
   const username = req.body.username;
+  const email = req.body.email;
   const password = req.body.password;
   if (username === "" || password === "") {
     res.render("auth/signup", { message: "Indicate username and password" });
@@ -42,6 +44,7 @@ router.post("/signup", (req, res, next) => {
 
     const newUser = new User({
       username,
+      email,
       password: hashPass
     });
 
@@ -60,10 +63,49 @@ router.post("/signup", (req, res, next) => {
 const ensureLogin = require("connect-ensure-login");
 
 router.get("/userPage", ensureLogin.ensureLoggedIn(), (req, res) => {
-  res.render("auth/userPage", { user: req.user });
+  let user = req.user._id
+  console.log(user, "userid")
+  User.findOne({ _id: user })
+    .then(userInfo => {
+      Pet.find({ owner: user })
+        .then(pets => {
+          console.log(pets)
+          res.render("auth/userPage", { userInfo, pets });
+        })
+
+    })
 });
 
 //********END OF REDIRECT TO USER PAGE CODE***********/
+
+
+
+//***********create the new-pet-page********** */
+router.get("/new-pet", ensureLogin.ensureLoggedIn(), (req, res) => {
+  res.render("auth/new-pet", { user: req.user });
+});
+
+router.post("/new-pet", (req, res) => {
+  let owner = req.user._id
+  console.log(req.body, "REQ BODY")
+  const { name, colour, age, animalFamily, pic } = req.body
+  const addressSplit = req.body.address.split(",")
+  const location = {
+    lat: req.body.lat,
+    lng: req.body.lng,
+    address: addressSplit[0],
+    city: addressSplit[1]
+  }
+  Pet.create({ name, colour, age, animalFamily, location, owner })
+    .then(() => {
+      res.redirect("/auth/userPage")
+    })
+    .catch(err => {
+      console.log("you have an error", err)
+      res.redirect("/auth/new-pet")
+    })
+})
+//************end of the new-pet-page*********** */
 
 router.get("/logout", (req, res) => {
   req.logout();

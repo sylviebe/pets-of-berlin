@@ -7,11 +7,11 @@ const PetSchema = new Schema(
             type: String,
             required: true
         },
-        color: String,
+        colour: String,
         age: Number,
         animalFamily: {
             type: String,
-            enum: ['Dog', 'Cat', 'Guinea Pig'],
+            enum: ['dog', 'cat', 'guinea pig', 'spider'],
             required: true
         },
         owner: { type: Schema.Types.ObjectId, ref: 'User' },
