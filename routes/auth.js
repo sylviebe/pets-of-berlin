@@ -25,10 +25,13 @@ router.get("/signup", (req, res, next) => {
 });
 
 router.post("/signup", (req, res, next) => {
+
+  console.log(req.body)
   const username = req.body.username;
   const email = req.body.email;
   const password = req.body.password;
   if (username === "" || password === "") {
+
     res.render("auth/signup", { message: "Indicate username and password" });
     return;
   }
@@ -49,8 +52,10 @@ router.post("/signup", (req, res, next) => {
     });
 
     newUser.save()
-      .then(() => {
-        res.redirect("/login");
+      .then(user => {
+        req.login(user, () => {
+          res.redirect("/auth/userPage");
+        })
       })
       .catch(err => {
         res.render("auth/signup", { message: "Something went wrong" });
@@ -73,6 +78,9 @@ router.get("/userPage", ensureLogin.ensureLoggedIn(), (req, res) => {
           res.render("auth/userPage", { userInfo, pets });
         })
 
+    })
+    .catch(err => {
+      res.redirect('/auth/login')
     })
 });
 

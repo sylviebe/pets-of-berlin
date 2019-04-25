@@ -13,6 +13,9 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const flash = require('connect-flash');
 
+// var sndClick = new Audio("./public/sounds/FeedMe.wav");
+// sndClick.play();
+
 const mongoConnectURI =
     process.env.NODE_ENV === 'dev'
         ? 'mongodb://localhost:27017/pets-of-berlin'
@@ -76,6 +79,18 @@ app.use(
 );
 app.use(flash());
 require('./passport')(app);
+
+app.use((req, res, next) => {
+    console.log("MIDDLEWARE", req.url);
+
+
+    res.locals.isConnected = !!req.user
+    if (req.user) {
+        res.locals.currentUserId = req.user._id
+        res.locals.username = req.user.username
+    }
+    next()
+})
 
 const apiRoutes = require('./routes/api');
 app.use('/api', apiRoutes);

@@ -27,18 +27,24 @@
         <li class="nav-item active">
           <a class="nav-link" href="/map">Map<span class="sr-only">(current)</span></a>
         </li>
+
+        {{#if isConnected}}
         <li class="nav-item ">
-          <a class="nav-link" href="/auth/usersPage">Your Profile</a>
+          <a class="nav-link" href="/auth/userPage">Your Profile</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/auth/logout">Log out</a>
+        </li>
+        {{/if}}
+
+        {{#unless isConnected}}
         <li class="nav-item ">
           <a class="nav-link" href="/auth/signup">Sign up</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/auth/login">Log in</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/">Log out</a>
-        </li>
+        {{/unless}}
 
       </ul>
     </div>
