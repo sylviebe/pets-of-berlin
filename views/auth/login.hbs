@@ -1,28 +1,31 @@
 <h2>Pets Of Berlin</h2>
 <h2>Login</h2>
 
-<form class="signup-form">
+
+
+{{!-- <form action="/auth/login" method="POST" id="form-container" class="signup-form">
   <div class="form-group">
     <label for="exampleInputUsername">Username</label>
-    <input type="password" class="form-control" id="exampleInput Username" placeholder="Username">
+    <input type="text" name="username" class="form-control" id="exampleInput Username" placeholder="Username">
   </div>
 
   <div class="form-group">
     <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    <input type="password" name="username" class="form-control" id="exampleInputPassword1" placeholder="Password">
   </div>
-  <button class="button-login">
-    <a href="/auth/login">Login</a></button>
-</form>
+  <button type="submit" class="button-login"></button>
+</form> --}}
 
-{{!-- <form action="/auth/login" method="POST" id="form-container">
-  <label for="username">Username</label>
-  <input id="username" type="text" name="username" placeholder="JonSnow">
-
-  <br><br>
-
-  <label for="password">Password</label>
-  <input id="password" type="password" name="password" placeholder="Your password">
+<form action="/auth/login" method="POST" id="form-container">
+  <div class='form-group'>
+    <label for="exampleInput Username">Username</label>
+    <input id='exampleInput Username' type="text" name="username" class='form-control' placeholder="JonSnow">
+  </div>
+  <br>
+  <div class='form-group'>
+    <label for="exampleInputPassword1">Password</label>
+    <input id="exampleInputPassword1" type="password" class='form-control' name="password" placeholder="Your password">
+  </div>
   <br>
   {{#if message }}
   <div class="error-message">{{ message }}</div>
@@ -30,12 +33,11 @@
 
   <br><br>
 
-  <button class="button-login">
-    <a href="/auth/userPage">Login</a>
+  <button class="button-login" type=submit>Login </button>
 
-    <p class="account-message">
-      Don't have an account yet?
-      <button class="button-signup">
-        <a class="button1" href="/auth/signup">Signup</a>
-    </p>
-</form> --}}
+  <p class="account-message">
+    Don't have an account yet?
+    <button class="button-signup">
+      <a class="button1" href="/auth/signup">Signup</a>
+  </p>
+</form>
