@@ -5,6 +5,11 @@ const User = require('../models/User');
 /*const Place = require('../models/place.js')*/
 
 /* GET home page */
+router.get('/map', (req, res, next) => {
+    console.log('hello from get route');
+    res.render('map');
+});
+
 router.get('/', (req, res, next) => {
     console.log('hello from get route');
     res.render('index');

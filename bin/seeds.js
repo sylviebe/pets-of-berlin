@@ -11,7 +11,7 @@ const Pet = require('../models/Pet');
 const bcryptSalt = 10;
 
 mongoose
-    .connect('mongodb://localhost/guinea-pig-match-app', { useNewUrlParser: true })
+    .connect(PROCESS.ENV.MONGODB.URI, { useNewUrlParser: true })
     .then(x => {
         console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`);
     })
@@ -77,7 +77,7 @@ let pets = [
         countryCode: 'DE'
     }
 ];
-
+// Deleting all the users
 User.deleteMany()
     .then(() => {
         return User.create(users);
