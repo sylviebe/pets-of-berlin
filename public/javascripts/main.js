@@ -1,7 +1,6 @@
 var map;
 const markers = [];
 
-
 // const geocoder = new google.maps.Geocoder()
 
 // geocoder.geocode({
@@ -74,7 +73,7 @@ const getPets = () => {
 const placePets = pets => {
     console.log('hello from placing pets', pets);
     console.log(pets);
-    pets.forEach(function (el) {
+    pets.forEach(function(el) {
         const pin = new google.maps.Marker({
             position: el.location,
             map: map,
@@ -86,5 +85,3 @@ const placePets = pets => {
 };
 
 getPets();
-
-

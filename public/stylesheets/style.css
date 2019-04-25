@@ -28,8 +28,9 @@ a {
   height: 100%;
   font-size: 14px;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: blueviolet; }
+  background-image: url("../images/pig final.png"); }
 
+/*  background-color: blueviolet; */
 .black-box {
   /* position: absolute; */
   display: flex;
@@ -43,11 +44,15 @@ a {
   color: white;
   text-align: center; }
 
+#logo {
+  width: 9vw; }
+
 .text-landing {
   text-align: center;
   font-size: 14px;
   color: #ffffff;
-  margin-top: 22px; }
+  margin-left: 22px;
+  margin-right: 22px; }
 
 .all-buttons {
   display: flex;
@@ -58,9 +63,10 @@ a {
 .button-view {
   width: 214px;
   height: 60px;
-  margin-top: 132px;
-  background-color: white;
-  color: black; }
+  margin-top: 90px;
+  background-color: blueviolet;
+  color: #ffd4b8;
+  border: none; }
 
 .button-group {
   display: flex;
@@ -74,8 +80,9 @@ a {
   margin: 5px;
   /* left: 80px;
     top: 338px; */
-  background-color: white;
-  color: black; }
+  background-color: blueviolet;
+  color: #ffd4b8;
+  border: none; }
 
 .button-signup {
   /* position: absolute; */
@@ -84,14 +91,16 @@ a {
   margin: 5px;
   /*  left: 193px;
     top: 338px */
-  background-color: white;
-  color: black; }
+  background-color: blueviolet;
+  color: #ffd4b8;
+  border: none; }
 
 /************* MAP PAGE *************/
 /************* SIGNUP PAGE *************/
 .signup-form {
-  background-color: blueviolet;
-  max-width: 1200px;
+  background-color: black;
+  color: white;
+  max-width: 1500px;
   display: flex;
   flex-direction: column;
   align-items: center;
