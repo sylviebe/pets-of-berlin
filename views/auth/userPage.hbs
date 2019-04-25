@@ -1,18 +1,22 @@
-<h2>Pets Of Berlin</h2>
-<h2>-User Page-</h2>
+<div class="signup-form">
 
-<h3>Your Details: </h3>
-<p>Hiiii {{userInfo.username}}, that's your name right? Haha you fuck!</p>
+  <h2>Pets Of Berlin</h2>
+  <h2>-User Page-</h2>
 
-
-
-<br><br>
+  <h3>Your Details: </h3>
+  <p>Hiiii {{userInfo.username}}, that's your name right? Haha you fuck!</p>
 
 
-<input type="button" onclick="location.href='/';" value="Go to Pet Map" />
 
-<input type="button" onclick="location.href='/auth/new-pet';" value="Create Pet" />
+  <br><br>
 
+
+  <input class="button-login" type="button" onclick="location.href='/';" value="Go to Pet Map" />
+
+  <input class="button-login" type="button" onclick="location.href='/auth/new-pet';" value="Create Pet" />
+
+
+</div>
 <br><br>
 
 <h2>{{userInfo.username}}'s Furry Friends: </h2>
@@ -21,15 +25,18 @@
 
 
 {{#each pets}}
-<a href="/new-pet/{{this.avatarUrl}}">Photo: {{this.avatarUrl}}</a>
-<br>
-<a href="/new-pet/{{this.id}}">Name: {{this.name}}</a>
-<br>
-<a href="/new-pet/{{this.colour}}">Colour: {{this.colour}}</a>
-<br>
-<a href="/new-pet/{{this.age}}">Age: {{this.age}}</a>
-<br>
-<a href="/new-pet/{{this.animalFamily}}">Animal Family: {{this.animalFamily}}</a>
+<div class="petwrap">
+  <a href="/new-pet/{{this.avatarUrl}}">Photo: {{this.avatarUrl}}</a>
+  <br>
+  <a href="/new-pet/{{this.id}}">Name: {{this.name}}</a>
+  <br>
+  <a href="/new-pet/{{this.colour}}">Colour: {{this.colour}}</a>
+  <br>
+  <a href="/new-pet/{{this.age}}">Age: {{this.age}}</a>
+  <br>
+  <a href="/new-pet/{{this.animalFamily}}">Animal Family: {{this.animalFamily}}</a>
+</div>
+
 <br>
 
 <form action="/new-pet/{{this.id}}/edit" method="get">

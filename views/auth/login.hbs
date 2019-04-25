@@ -16,7 +16,7 @@
   <button type="submit" class="button-login"></button>
 </form> --}}
 
-<form action="/auth/login" method="POST" id="form-container">
+<form class="signup-form" action="/auth/login" method="POST" id="form-container">
   <div class='form-group'>
     <label for="exampleInput Username">Username</label>
     <input id='exampleInput Username' type="text" name="username" class='form-control' placeholder="JonSnow">
@@ -34,10 +34,10 @@
   <br><br>
 
   <button class="button-login" type=submit>Login </button>
+  <button class="button-signup">
+    <a class="button1" href="/auth/signup">Signup</a>
+    <p class="account-message">
+      Don't have an account yet?
 
-  <p class="account-message">
-    Don't have an account yet?
-    <button class="button-signup">
-      <a class="button1" href="/auth/signup">Signup</a>
-  </p>
+    </p>
 </form>
