@@ -49,7 +49,8 @@ function startMap() {
             lng: 13.420135
         },
         map: map,
-        title: "I'm here",
+        title: "Derek",
+        age: "20",
         icon: './images/guinea-icon.png'
     });
 }
@@ -70,14 +71,18 @@ const getPets = () => {
         });
 };
 
+
+
 const placePets = pets => {
     console.log('hello from placing pets', pets);
     console.log(pets);
-    pets.forEach(function(el) {
+    pets.forEach(function (el) {
+        let information = `This is ${el.name}. He is ${el.age} and belongs to the ${el.animalFamily} family. `
+        console.log(el, "ELEMENTS AAAAHAHHAHAHAHA")
         const pin = new google.maps.Marker({
             position: el.location,
             map: map,
-            title: el.name,
+            title: information,
             icon: './images/guinea-icon.png'
         });
         markers.push(pin);

@@ -13,7 +13,7 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const flash = require('connect-flash');
 
-// var sndClick = new Audio("./public/sounds/FeedMe.wav");
+// var sndClick = new Audio("/public/sounds/FeedMe.wav");
 // sndClick.play();
 
 const mongoConnectURI =
@@ -66,7 +66,7 @@ hbs.registerHelper('ifUndefined', (value, options) => {
 });
 
 // default value for title local
-app.locals.title = 'Express - Generated with IronGenerator';
+app.locals.title = 'Pets of Berlin';
 
 // Enable authentication using session + passport
 app.use(

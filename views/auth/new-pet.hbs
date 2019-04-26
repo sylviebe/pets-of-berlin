@@ -6,6 +6,7 @@
 
 <form class="signup-form">
 <div class="petswrap">
+<<<<<<< HEAD
   <div style="height:800px" class="signup-form" action="/auth/new-pet" method="POST" id="form-container">
 
     <label style="padding-top:10px" for="exampleInput name">Petname </label>
@@ -66,6 +67,67 @@
  <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
   <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
 <div id="map"></div>
+=======
+  <form class="signup-form" action="/auth/new-pet" method="POST" id="form-container">
+    <div style="height:800px">
+
+
+      <label style="padding-top:10px" for="name">Petname </label>
+      <input id="name" type="text" name="name" placeholder="Fluffykins">
+
+      <br><br>
+
+      <label for="colour">Pet Colour </label>
+      <input id="petColour" type="text" name="colour" placeholder="A lucious crimson sau">
+
+      <br><br>
+
+      <label for="age">Age </label>
+      <input id="petAge" type="number" name="age" placeholder="Pet Age">
+
+      <br><br>
+
+      <label for="location">Address </label>
+      <input id="geo" type="text" name="address" width="300px">
+      <input type="hidden" name="lat" placeholder="latitude" id="lat">
+      <input type="hidden" name="lng" placeholder="longitude" id="lng">
+
+      <br><b
+
+
+      <label for="animalFamily">Animal Family </label>
+      <select style="background-color:white" name="animalFamily">
+        <option name="animalFamily" value="pleaseSelect">Please Choose</option>
+        <option name="animalFamily" value="guinea pig">Guinea Pig</option>
+        <option name="animalFamily" value="dog">Dog</option>
+        <option name="animalFamily" value="cat">Cat</option>
+        <option name="animalFamily" value="spider">Spider</option>
+      </select>
+      <br><br>
+      <label for="petPhoto">Photo: </label>
+      <form style="text-align:center" action="/action_page.php">
+        <input style="background-color:white" type="file" name="pic" accept="image/*">
+        <input style="background-color:white" type="submit">
+      </form>
+      <br>
+      <button {{!-- style={"background-color: white", "width:10vw" } --}} class="button-login" id="submit" type="submit"
+        name="button">Create Pet</button>
+      <br>
+      <input class="button-other" type="button" onclick="location.href='/auth/new-pet';" value="Cancel Pet" />
+      <br>
+      <input class="button-other" type="button" onclick="location.href='/';" value="Go to Pet Map" />
+      <br>
+    </div>
+  </form>
+</div>
+
+
+<br><br><br><br>
+
+
+
+<div style="width:600px;height:600px" id="map"></div>
+>>>>>>> ecdf2aa7d4940c603111f7374edc2f4c46549cbf
 
 
 <script
@@ -87,7 +149,7 @@
       const myMarker = new google.maps.Marker({
         position: center,
         map: map,
-        title: "I'm here"
+        title: "Derrick"
       });
     })
     var input = document.querySelector('#geo')
