@@ -1,6 +1,6 @@
 var map;
 const markers = [];
-
+let playing = false
 // const geocoder = new google.maps.Geocoder()
 
 // geocoder.geocode({
@@ -90,3 +90,7 @@ const placePets = pets => {
 };
 
 getPets();
+
+
+
+
