@@ -4,71 +4,7 @@
 <br>
 <h4 style="text-align: center">Use the below form to create your pets profile</h4>
 
-<form class="signup-form">
-<div class="petswrap">
-<<<<<<< HEAD
-  <div style="height:800px" class="signup-form" action="/auth/new-pet" method="POST" id="form-container">
-
-    <label style="padding-top:10px" for="exampleInput name">Petname </label>
-    <input id="exampleInput name" type="text" name="name" class='form-control' placeholder="Fluffykins">
-
-    <br><br>
-
-    <label for="colour">Pet Colour </label>
-    <input id="petColour" type="text" name="colour" class='form-control' placeholder="A lucious crimson sau">
-
-    <br><br>
-
-    <label for="age">Age </label>
-    <input id="petAge" type="number" name="age" class='form-control' placeholder="Pet Age">
-
-    <br><br>
-  
-    <label for="location">Address</label>
-    <input id="geo" type="text" name="address" width="300px">
-    <input type="hidden" name="lat" placeholder="latitude" id="lat">
-    <input type="hidden" name="lng" placeholder="longitude" id="lng">
-
-    <br><br>
-</form>
-
-    <label for="animalFamily">Animal Family </label>
-    <select style="background-color:white" name="animalFamily">
-      <option name="animalFamily" value="pleaseSelect">Please Choose</option>
-      <option name="animalFamily" value="guinea pig">Guinea P       ig</option>
-      <option name="animalFamily" value="dog">Dog</option>
-      <option name="animalFamily" value="cat">Cat</option>
-       <option name="animalFamily" value="spider">Spider</option>
-    </select>
-    <br><br> 
-    
-    <label for="petPhoto">Photo</label>
-    <input id="petColour" type="text" name="colour" class='form-control' placeholder="upload image">
-    <div class="imageinput">
- {{!-- <form style="text-align:center" action="/action_page.php"> --}}
-      <input style="background-color:white" type="file" name="pic" accept="image/*">
-      <input sçtyle="border: white;" type="submit"> 
-      </div>
-      
-    </form>
-    <br>
-    <button {{!-- style={"background-color: white", "width:10vw" } --}} class="button-login" id="submit" type="submit"
-      name="button">Create Pet</button>
-    <br>
-    <input class="button-other" type="button" onclick="location.href='/auth/new-pet';" value="Cancel Pet" />
-    <br>
-    {{!-- <input class="button-other" type="button" onclick="location.href='/';" value="View Map" /> --}}
-  </div>
-</div>
-
-</form>
-
-
- <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
-  <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
-<div id="map"></div>
-=======
-  <form class="signup-form" action="/auth/new-pet" method="POST" id="form-container">
+<form class="signup-form" action="/auth/new-pet" method="POST" id="form-container">
     <div style="height:800px">
 
 
@@ -119,19 +55,19 @@
       <br>
     </div>
   </form>
-</div>
+
 
 
 <br><br><br><br>
+<div id="map"></div>
+
+{{!-- <div style="width:600px;height:600px" id="map"></div> --}}
 
 
 
-<div style="width:600px;height:600px" id="map"></div>
->>>>>>> ecdf2aa7d4940c603111f7374edc2f4c46549cbf
 
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0iBJ86eZUGkhbuWhS7b4_B3-8cRYQgTQ&libraries=places"></script>
 
-<script
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0iBJ86eZUGkhbuWhS7b4_B3-8cRYQgTQ&libraries=places"></script>
 <script>
   function startMap() {
     var map = new google.maps.Map(document.getElementById('map'), {
