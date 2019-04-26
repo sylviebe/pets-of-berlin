@@ -117,7 +117,7 @@ a {
 /************* MAP PAGE *************/
 /************* SIGNUP PAGE *************/
 .signup-form {
-  background-color: white;
+  background-color: yellow;
   color: black;
   max-width: 1500px;
   display: flex;
@@ -135,10 +135,13 @@ a {
 
 /* div {
     border: solid 1px red; */
-.petswrap {
+.petwrap a {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap; }
+  align-items: center;
+  justify-content: center;
+  color: black;
+  margin-top: 80px; }
 
 /************* USER PAGE *************/
 .details {

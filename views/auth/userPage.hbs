@@ -6,18 +6,45 @@
   <br><br>
 
   <p class="details"> Hi {{userInfo.username}}, that's your name right?
-    Welcome to pets of Berlin, nice to have you here!</p>
-  <p>Here's what you've had to say about yourself: </p>
+    Welcome to pets of Berlin, nice to have you here you fuck!</p>
+  <p class="details"> Here's what you've had to say about yourself: </p>
   <p>{{userInfo.description}}</p>
 
 
 
-  <br><br>
 
 
   <input class="button-login" type="button" onclick="location.href='/map';" value="View Map" />
 
   <input class="button-login" type="button" onclick="location.href=/new-pet';" value="Create Pet" />
+
+
+
+
+{{#each pets}}
+<div class="petwrap">
+  <a href="/new-pet/{{this.avatarUrl}}">Photo: {{this.avatarUrl}}</a>
+  <a href="/new-pet/{{this.id}}">Name: {{this.name}}</a>
+  <a href="/new-pet/{{this.colour}}">Colour: {{this.colour}}</a>
+  <a href="/new-pet/{{this.age}}">Age: {{this.age}}</a>
+  <a href="/new-pet/{{this.animalFamily}}">Animal Family: {{this.animalFamily}}</a>
+</div>
+
+<br>
+
+<form action="/new-pet/{{this.id}}/edit" method="get">
+  <div><button class="button-login" type="submit" class="">Edit this pet</button></div>
+</form>
+
+{{!-- <form action="/new-pet/{{this.id}}/delete" method="post">
+  <div><button type="submit" class="">Dead? Delete it here</button></div>
+</form> --}}
+
+<br>
+<br>
+{{/each}}
+
+
 
 
 </div>
@@ -26,31 +53,6 @@
 <h3>{{userInfo.username}}'s Pets: </h3>
 
 <br><br>
+<br><br>
 
 
-{{#each pets}}
-<div class="petwrap">
-  <a href="/new-pet/{{this.avatarUrl}}">Photo: {{this.avatarUrl}}</a>
-  <br>
-  <a href="/new-pet/{{this.id}}">Name: {{this.name}}</a>
-  <br>
-  <a href="/new-pet/{{this.colour}}">Colour: {{this.colour}}</a>
-  <br>
-  <a href="/new-pet/{{this.age}}">Age: {{this.age}}</a>
-  <br>
-  <a href="/new-pet/{{this.animalFamily}}">Animal Family: {{this.animalFamily}}</a>
-</div>
-
-<br>
-
-<form action="/new-pet/{{this.id}}/edit" method="get">
-  <div><button type="submit" class="">Edit this pet</button></div>
-</form>
-
-<form action="/new-pet/{{this.id}}/delete" method="post">
-  <div><button type="submit" class="">Dead? Delete it here</button></div>
-</form>
-
-<br>
-<br>
-{{/each}}
