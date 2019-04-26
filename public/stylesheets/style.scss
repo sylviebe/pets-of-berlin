@@ -21,7 +21,7 @@ h2 {
 }
 
 a {
-    color: #00b7ff;
+    color: #ffd4b8;
     width: 100%;
     height: 60px;
 }
@@ -46,10 +46,10 @@ a {
     align-items: center;
     width: 100%;
     height: 398px;
-    background-color: black;
+    background-color: white;
     font-size: 14px;
     font-family: Arial, Helvetica, sans-serif;
-    color: white;
+    color: black;
     text-align: center;
 }
 
@@ -60,7 +60,8 @@ a {
 .text-landing {
     text-align: center;
     font-size: 14px;
-    color: #ffffff;
+    color: black;
+    margin-top: 22px;
     margin-left: 22px;
     margin-right: 22px;
 }
@@ -76,7 +77,7 @@ a {
     width: 214px;
     height: 60px;
     margin-top: 90px;
-    background-color: blueviolet;
+    background-color: black;
     color: #ffd4b8;
     border: none;
 }
@@ -95,7 +96,7 @@ a {
 
     /* left: 80px;
     top: 338px; */
-    background-color: blueviolet;
+    background-color: black;
     color: #ffd4b8;
     border: none;
 }
@@ -108,7 +109,7 @@ a {
 
     /* left: 80px;
     top: 338px; */
-    background-color: chartreuse;
+    background-color: white;
     color: black;
     border: none;
 }
@@ -120,7 +121,7 @@ a {
     margin: 5px;
     /*  left: 193px;
     top: 338px */
-    background-color: blueviolet;
+    background-color: black;
     color: #ffd4b8;
     border: none;
 }
@@ -129,8 +130,8 @@ a {
 
 /************* SIGNUP PAGE *************/
 .signup-form {
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: black;
     max-width: 1500px;
     display: flex;
     flex-direction: column;
@@ -145,11 +146,17 @@ a {
     font-size: 10px;
     margin-top: 5px;
 }
-div {
-    border: solid 1px red;
-}
+/* div {
+    border: solid 1px red; */
+
 .petswrap {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+}
+
+/************* USER PAGE *************/
+
+.welcome {
+    padding: 10px;
 }
