@@ -158,10 +158,16 @@ a {
 /* div {
     border: solid 1px red; */
 
-.petswrap {
+.petwrap a {
+    
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    margin-top: 80px;
+    
+
 }
 
 /************* USER PAGE *************/
