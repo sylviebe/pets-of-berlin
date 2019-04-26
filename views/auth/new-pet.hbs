@@ -1,32 +1,35 @@
-<h1 style="text-align: center">Create Your Pet</h1>
-
+<h2>Pets of Berlin</h2>
+<br>
+<h2 style="text-align: center">Create Your Pet</h2>
+<br>
 <h4 style="text-align: center">Use the below form to create your pets profile</h4>
 
+<form class="signup-form">
 <div class="petswrap">
   <div style="height:800px" class="signup-form" action="/auth/new-pet" method="POST" id="form-container">
 
-    <label style="padding-top:10px" for="name">Petname </label>
-    <input id="name" type="text" name="name" placeholder="Fluffykins">
+    <label style="padding-top:10px" for="exampleInput name">Petname </label>
+    <input id="exampleInput name" type="text" name="name" class='form-control' placeholder="Fluffykins">
 
     <br><br>
 
     <label for="colour">Pet Colour </label>
-    <input id="petColour" type="text" name="colour" placeholder="A lucious crimson sau">
+    <input id="petColour" type="text" name="colour" class='form-control' placeholder="A lucious crimson sau">
 
     <br><br>
 
     <label for="age">Age </label>
-    <input id="petAge" type="number" name="age" placeholder="Pet Age">
+    <input id="petAge" type="number" name="age" class='form-control' placeholder="Pet Age">
 
     <br><br>
 
-    <label for="location">Address </label>
+    <label for="location">Address</label>
     <input id="geo" type="text" name="address" width="300px">
     <input type="hidden" name="lat" placeholder="latitude" id="lat">
     <input type="hidden" name="lng" placeholder="longitude" id="lng">
 
     <br><br>
-
+</form>
 
     <label for="animalFamily">Animal Family </label>
     <select style="background-color:white" name="animalFamily">
@@ -36,12 +39,16 @@
       <option name="animalFamily" value="cat">Cat</option>
       <option name="animalFamily" value="spider">Spider</option>
     </select>
-    <br><br>
-    <label for="petPhoto">Photo: </label>
-    <form style="text-align:center" action="/action_page.php">
+    <br><br> 
+    
+    <label for="petPhoto">Photo</label>
+    <input id="petColour" type="text" name="colour" class='form-control' placeholder="upload image">
+    <div class="imageinput">
+ {{!-- <form style="text-align:center" action="/action_page.php"> --}}
       <input style="background-color:white" type="file" name="pic" accept="image/*">
-
-      <input style="background-color:white" type="submit">
+      <input sçtyle="border: white;" type="submit"> 
+      </div>
+      
     </form>
     <br>
     <button {{!-- style={"background-color: white", "width:10vw" } --}} class="button-login" id="submit" type="submit"
@@ -49,20 +56,16 @@
     <br>
     <input class="button-other" type="button" onclick="location.href='/auth/new-pet';" value="Cancel Pet" />
     <br>
-    <input class="button-other" type="button" onclick="location.href='/';" value="Go to Pet Map" />
+    <input class="button-other" type="button" onclick="location.href='/';" value="View Map" />
   </div>
 </div>
-
-
-
 
 </form>
 
 
-
-
-
-<div style="width:600px;height:600px" id="map"></div>
+ <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+  <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+<div id="map"></div>
 
 
 <script
