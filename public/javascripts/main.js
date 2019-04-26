@@ -77,7 +77,7 @@ const placePets = pets => {
     console.log('hello from placing pets', pets);
     console.log(pets);
     pets.forEach(function (el) {
-        let information = `This is ${el.name}. He is ${el.age} and belongs to the ${el.animalFamily} family. `
+        let information = `This is ${el.name}. ${el.name} is ${el.age} and belongs to the ${el.animalFamily} family and is a ${el.colour} colour. Click on ${el.name} to connect.`
         console.log(el, "ELEMENTS AAAAHAHHAHAHAHA")
         const pin = new google.maps.Marker({
             position: el.location,
