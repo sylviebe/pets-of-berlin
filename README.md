@@ -5,6 +5,6 @@ It primarily uses the Google Maps API and was built using Node.js, Express.js, H
 
 A beta version can been seen at https://pets-of-berlin.herokuapp.com
 
-![Alt text](/public/imaages/poBpic1.png?raw=true "Pets of Berlin")
-![Alt text](/public/imaages/poBpic2.png?raw=true "Pets of Berlin")
-![Alt text](/public/imaages/poBpic3.png?raw=true "Pets of Berlin")
+![Alt text](/public/images/poBpic1.png?raw=true "Pets of Berlin")
+![Alt text](/public/images/poBpic2.png?raw=true "Pets of Berlin")
+![Alt text](/public/images/poBpic3.png?raw=true "Pets of Berlin")
